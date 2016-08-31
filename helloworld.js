@@ -1,4 +1,3 @@
-document.write('Game Hello World <br>');  //scrive  Game Hello World
 
 // dichiarazione di un costruttore
 function parallelepipedo(altezza,lunghezza,larghezza){
@@ -6,28 +5,25 @@ function parallelepipedo(altezza,lunghezza,larghezza){
 	this.lunghezza = lunghezza;
 	this.larghezza = larghezza;
 	// dichiarazione di un metodo calcolavolume
-	this.calcolavolume = calcolavolume;
-
-	//il metodo calcolavolume calcola i valori associati alle proprietà sopra elencate
-	function calcolavolume(){
+	this.calcolavolume = function calcolavolume(){
 		return this.altezza * this.lunghezza * this.larghezza;
 		// i this si riferiscono all'oggetto parallelepipedo
 	};
 };
-
-// dichiaro un oggetto parallelepipedo
-var parallelepipedo_1 = new parallelepipedo(
-	prompt('altezza: '),    //inserzione dei parametri altezza , lunghezza, larghezza 
-	prompt('lunghezza: '),
-	prompt('larghezza: ')
+//creo un oggetto volumeObj
+var volumeObj = new parallelepipedo(
+	document.write('<input type= "Number" name="altezza" value=0>','<br>'),
+	document.write('<input type= "Number" name="lunghezza" value=0>','<br>'),
+	document.write('<input type= "Number" name="larghezza" value=0>','<br>')
 	);
 
-//visualizza il risultato del metodo calcolavolume sull'oggetto parallelepipedo_1
-console.log(parallelepipedo_1.calcolavolume());
-alert(parallelepipedo_1.calcolavolume());
-document.write('altezza: ',parallelepipedo_1.altezza,'<br>'); // mostra this.altezza
-document.write('lunghezza: ',parallelepipedo_1.lunghezza,'<br>'); // mostra this.lunghezza
-document.write('larghezza: ',parallelepipedo_1.larghezza,'<br>'); // mostra this.larghezza
-document.write('volume del parallelepipedo: ',parallelepipedo_1.calcolavolume()); // mostra this.calcolavolume
+console.log('altezza',volumeObj.altezza);
+console.log('lunghezza',volumeObj.lunghezza);
+console.log('larghezza',volumeObj.larghezza);
+console.log('volume',volumeObj.calcolavolume());
 
+function volume(){
+	volumeObj.calcolavolume()
+	document.getElementById('demo').innerHTML = 'result';
+};
 
