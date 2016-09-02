@@ -12,18 +12,17 @@ function parallelepipedo(altezza,lunghezza,larghezza){
 };
 //creo un oggetto volumeObj
 var volumeObj = new parallelepipedo(
-	document.write('<input type= "Number" name="altezza" value=0>','<br>'),
-	document.write('<input type= "Number" name="lunghezza" value=0>','<br>'),
-	document.write('<input type= "Number" name="larghezza" value=0>','<br>')
+	document.getElementsByClassName("altezza"),
+	document.getElementsByClassName("lunghezza"),
+	document.getElementsByClassName("larghezza")
 	);
 
-console.log('altezza',volumeObj.altezza);
-console.log('lunghezza',volumeObj.lunghezza);
-console.log('larghezza',volumeObj.larghezza);
-console.log('volume',volumeObj.calcolavolume());
 
-function volume(){
-	volumeObj.calcolavolume()
-	document.getElementById('demo').innerHTML = 'result';
-};
+var datoVolume = volumeObj.calcolavolume(); //salvo il valore del volume in una variabile datoVolume
+console.log('valore del volume salvato in datoVolume: ',datoVolume);
 
+
+function x(){
+	document.getElementsById("demo").innerHTML = datoVolume.innerHTML;
+}
+console.log(x());
